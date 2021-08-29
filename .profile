@@ -5,11 +5,11 @@
 # -*- Usage:   *.*  -*-
 
 # Owner: Jacob B. Sanders
-# Source: code.cloud-technology.io
+# Source: gitlab.cloud-technology.io
 # License: BSD 3-Clause License
 
 #
-# Copyright 2020, Jacob B. Sanders - Cloud Hybrid LLC. & Affiliates
+# Copyright 2021, Jacob B. Sanders
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted
 # provided that the following conditions are met:
@@ -327,9 +327,9 @@ function parse_git_branch() {
     if [ ! "${BRANCH}" == "" ]
         then
             STAT="$(parse_git_dirty)"
-            echo "[${BRANCH}${STAT}]"
+            printf "[${BRANCH}${STAT}]"
         else
-            echo ""
+            printf ""
         fi
 }
 
@@ -376,7 +376,8 @@ $(
             printf "${CGREY}[%s]${CEND} " "\@"; \
 	printf "${CYELLOW}[%s]${CEND}" "\w";
 )
-$(printf "${CGREEN}")\$(parse_git_branch)$(printf "${CEND}")$(printf "%s" ": ")
+\$(printf "VCS Status - ${CGREEN}" && parse_git_branch && printf "${CEND}")
+$(printf "%s${CBOLD}${CGREEN}" ": ")
 EOF
 )
 
