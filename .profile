@@ -422,16 +422,9 @@ alias git-update=gitupdate
 
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
-alias npm-12=/usr/local/opt/node\@12/bin/npm
-
-alias node-12=/usr/local/opt/node\@12/bin/node
-
 export PATH="${PATH}:/usr/local/bin/node"
 
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
-export PATH
-
-alias python=python3
+export PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
 
 export NVM_DIR="${HOME}/.nvm"
 
@@ -441,10 +434,11 @@ alias start-mongo='mongod --port 27017 --bind_ip_all --verbose --dbpath ~/Mongo'
 
 alias rsync="rsync -az --info=progress2"
 
-
 alias copy-ssh-key="tr -d '\n' < ${1} | pbcopy"
+
 export PATH="${PATH}\:~/.local/share/terraform"
 
 export NVM_DIR="$HOME/.nvm"
+
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
